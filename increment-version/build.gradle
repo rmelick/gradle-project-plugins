@@ -2,3 +2,17 @@ plugins {
   id 'java-gradle-plugin'
   id 'groovy'
 }
+
+dependencies {
+  compile gradleApi()
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      artifactId project.getName()
+
+      from components.java
+    }
+  }
+}
